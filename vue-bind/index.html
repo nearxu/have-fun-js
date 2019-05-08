@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h2>{{title}}</h2>
+    <input v-model="name" />
+    <h1>{{name}}</h1>
+    <button v-on:click="click">click me</button>
+  </div>
+  <!-- <script src="./defineProperty.js"></script> -->
+  <script src="./watcher.js"></script>
+  <script src="./observer.js"></script>
+  <script src="./compile.js"></script>
+  <script src="./index.js"></script>
+  <script type="text/javascript">
+    // var ele = document.querySelector('#name')
+    // var selfVue = new SelfVue({
+    //   name: 'hello vue'
+    // }, ele, 'name');
+
+    // add compile
+    var selfVal = new SelfVue({
+      el: '#app',
+      data: {
+        title: 'hello world',
+        name: 'vue-bind'
+      },
+      methods: {
+        click: function () {
+          this.title = 'click me change title';
+        }
+      },
+      mounted: function () {
+        this.title = 'ok ,now its run mounted,change title mounted'
+      }
+    })
+
+    window.setTimeout(function () {
+      // selfVue.data.name = 'vue-bind' // fixed here add selfVal proxyKeys
+      selfVal.name = 'settimeout 2 s change'
+    }, 2000)
+  </script>
+</body>
+
+</html>
