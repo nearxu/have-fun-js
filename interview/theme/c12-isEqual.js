@@ -9,3 +9,4 @@ const isEqual = (a, b) => {
   if (!a || !b || typeof a !== 'object') return a === b;
   if (a.prototype !== b.prototype) return false;
 }
+

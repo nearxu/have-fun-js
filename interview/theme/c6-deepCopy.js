@@ -1,3 +1,5 @@
+
+
 // solw Object.assign({},a)
 // but just only one
 
@@ -14,3 +16,7 @@ function deepCopy(source) {
   }
   return target;
 }
+
+// JSON.stringify(obj)
+
+// JSON.parse(obj)
