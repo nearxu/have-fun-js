@@ -10,3 +10,12 @@ const strCount = str => {
 
 console.log(strCount('hello world'))
 
+let arr = [];
+arr[4] = null;
+console.log(arr)
+let rand = () => Math.floor(Math.random()*32+2);
+console.log(rand())
+
+let randArr = () => arr.filter((item ,index ,array) => array.indexOf(rand()) > -1 ? array.push(rand()):array)
+
+console.log(randArr())
